@@ -1,0 +1,31 @@
+#a{
+    color:rgba(0, 0, 0, 0.877);
+}
+#b{
+    color:rgba(0, 0, 0, 0.877);
+}
+#c{
+    color:rgba(0, 0, 0, 0.877);
+}
+#ab{
+    max-width: 960px;
+}
+#ac{
+    max-width: 960px;
+}
+#bc{
+    max-width: 960px;
+}
+body{
+    background-color: rgba(185, 14, 207, 0.747);
+}
+
+.error {
+    border: 2px red solid !important;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: inline;
+}
