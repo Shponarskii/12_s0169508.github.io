@@ -62,7 +62,7 @@ if (!empty($messages['success'])){
                     Женский
                 </label>
                 <input type="radio" class="form-check-input" name="radio-1" value="f"
-                    <?php if ($values['sex'] == 'f') {
+                    <?php if ($values['radio-1'] == 'f') {
                         print 'checked';
                     } ?>>
             </div>
@@ -75,7 +75,7 @@ if (!empty($messages['success'])){
                     1
                 </label>
                 <input type="radio" class="form-check-input" name="radio-2"
-                    <?php if ($values['limbs'] == '1') {
+                    <?php if ($values['radio-2'] == '1') {
                         print 'checked';
                     } ?> value="1">
             </div>
@@ -85,7 +85,7 @@ if (!empty($messages['success'])){
                     2
                 </label>
                 <input type="radio" class="form-check-input" name="radio-2"
-                       <?php if ($values['limbs'] == '2') {
+                       <?php if ($values['radio-2'] == '2') {
                            print 'checked';
                        } ?>value="2">
             </div>
@@ -95,7 +95,7 @@ if (!empty($messages['success'])){
                     3
                 </label>
                 <input type="radio" class="form-check-input" name="radio-2"
-                       <?php if ($values['limbs'] == '3') {
+                       <?php if ($values['radio-2'] == '3') {
                            print 'checked';
                        } ?>value="3">
             </div>
