@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Задание 3</title>
+    <title>Задание 4</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -45,7 +45,7 @@ if (!empty($messages['success'])){
                 Дата рождения:<br>
             </label><br>
             <input type="date" min="2000-01-01" max="2005-12-31" name="dob" class="form-control" id="inbirth"
-                   value="<?php print($values['birthday']); ?>" required>
+                   value="<?php print($values['dob']); ?>" required>
         </div>
 
         <div class="col-md-6 col-sm-12">
@@ -72,39 +72,38 @@ if (!empty($messages['success'])){
             Количество конечностей:
             <div class="form-check-inline">
                 <label class="form-check-label">
-                    1
+                    4
                 </label>
-                <input type="radio" class="form-check-input" name="radio-2"
-                    <?php if ($values['radio-2'] == '1') {
-                        print 'checked';
-                    } ?> value="1">
-            </div>
-
-            <div class="form-check-inline">
-                <label class="form-check-label">
-                    2
-                </label>
-                <input type="radio" class="form-check-input" name="radio-2"
-                       <?php if ($values['radio-2'] == '2') {
-                           print 'checked';
-                       } ?>value="2">
+                <input type="radio" class="form-check-input" name="radio-2" checked="checked" value="4">
             </div>
 
             <div class="form-check-inline">
                 <label class="form-check-label">
                     3
                 </label>
-                <input type="radio" class="form-check-input" name="radio-2"
+                <input type="radio" class="form-check-input" name="radio-2" value="3"
                        <?php if ($values['radio-2'] == '3') {
                            print 'checked';
-                       } ?>value="3">
+                       } ?>>
             </div>
 
             <div class="form-check-inline">
                 <label class="form-check-label">
-                    4
+                    2
                 </label>
-                <input type="radio" class="form-check-input" checked="checked" name="radio-2" value="4">
+                <input type="radio" class="form-check-input" name="radio-2" value="2"
+                       <?php if ($values['radio-2'] == '2') {
+                           print 'checked';
+                       } ?>>
+            </div>
+
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    1
+                </label>
+                <input type="radio" class="form-check-input" name="radio-2" value="1" <?php if ($values['radio-2'] == 1) {
+                    print 'checked';
+                } ?>>
             </div>
         </div>
 
@@ -122,7 +121,7 @@ if (!empty($messages['success'])){
         <div class="col-12">
             <label>
                 Биография:<br>
-                <textarea class="form-control <?php if ($errors['life']) print 'error'; ?>" name="life" value="<?php print $values['life']; ?>" required></textarea>
+                <textarea class="form-control <?php if ($errors['life']) print 'error'; ?>" name="life" required><?php print $values['life']; ?></textarea>
             </label>
         </div>
         <?php if ($errors['life']) {
@@ -132,7 +131,9 @@ if (!empty($messages['success'])){
         <div class="col-12">
             <label>
                 С контрактом ознакомлен(-а):<br>
-                <input type="checkbox" name="choice" value="<?php print $values['choice']; ?>" required>
+                <input type="checkbox" name="choice" <?php if ($values['choice'] == 'on') {
+                    print 'checked';
+                } ?> required>
             </label><br>
         </div>
 

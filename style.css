@@ -17,7 +17,7 @@
     max-width: 960px;
 }
 body{
-    background-color: rgba(185, 14, 207, 0.747);
+    background-color: rgba(255, 251, 0, 0.822);
 }
 
 .error {
@@ -26,6 +26,6 @@ body{
 
 .error-message {
     color: red;
-    font-size: 14px;
+    font-size: 20px;
     display: inline;
 }

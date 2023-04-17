@@ -15,12 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     if ($errors['name']) {
         $messages['name'] = 'Заполните имя, используя только латинские буквы<br>';
-        setcookie('name_error', '1');
     }
 
     if ($errors['life']) {
         $messages['life'] = 'Заполните биографию, используя только латинские буквы<br>';
-        setcookie('life_error', '1');
     }
 
     $values = array();
@@ -55,11 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     $errors = FALSE;
 
-    if ((!preg_match("/^[a-zA-z]*$/", $name))) {
+    if (!preg_match("/^[a-zA-z]*$/", $name)) {
         setcookie('name_error', '1');
         $errors = TRUE;
     } else {
         setcookie('name_value', $name, time() + 12 * 30 * 24 * 60 * 60);
+        setcookie('name_error', '');
     }
 
     if (!preg_match("/^([a-zA-Z' ]+)$/", $bio)) {
@@ -67,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $errors = TRUE;
     } else {
         setcookie('life_value', $bio, time() + 12 * 30 * 24 * 60 * 60);
+        setcookie('life_error', '');
     }
 
     setcookie('email_value', $email, time() + 12 * 30 * 24 *60 * 60);
@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         exit();
     } else {
         setcookie('name_error', '');
-        setcookie('bio_error', '');
+        setcookie('life_error', '');
     }
 
     setcookie('save', '1', time() + 12 * 30 * 24 * 60 * 60);
